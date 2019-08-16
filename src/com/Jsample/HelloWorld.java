@@ -1,14 +1,8 @@
 package com.Jsample;
 
 
-import javax.sound.midi.Soundbank;
-import java.io.PrintStream;
-import java.security.PublicKey;
-import java.sql.SQLOutput;
-import java.util.Date;
-import java.util.StringTokenizer;
-
-import static java.lang.Math.*;
+import java.math.BigInteger;
+import java.util.Scanner;
 
 /**
  * 这个是一个测试自动生成文档的注释格式。
@@ -93,16 +87,35 @@ else System.out.println("这是一个数字");
 //        System.out.println("Hello".equals(greeting));
 //        boolean a = "Hello".equalsIgnoreCase("hello");
 //        System.out.println(a);
-        double x = 10000.0 / 3.0;
-        System.out.println(x);
-        System.out.printf("%8.2f", x);
-        System.out.println();
-        System.out.printf("%,.2f", 10000.0 / 3.0);
-        System.out.println();
-        System.out.printf("%tc", new Date());
-        System.out.println();
-        PrintStream printf = System.out.printf("%1$s %2$tB %2$te, %2$tY", "Due date:", new Date());
-        System.out.println(printf);
+//        double x = 10000.0 / 3.0;
+//        System.out.println(x);
+//        System.out.printf("%8.2f", x);
+//        System.out.println();
+//        System.out.printf("%,.2f", 10000.0 / 3.0);
+//        System.out.println();
+//        System.out.printf("%tc", new Date());
+//        System.out.println();
+//        PrintStream printf = System.out.printf("%1$s %2$tB %2$te, %2$tY", "Due date:", new Date());
+//        System.out.println(printf);
+//        for (int i = 10; i >0 ; i--)
+//            System.out.println("Counting down ... " + i);
+//        System.out.println("Blastoff");
+//        int lotteryOdds = 1;
+//        for (int i = 1; i <= 2; i++) {
+//            lotteryOdds = lotteryOdds * (5 - i + 1 ) / i;
+//        }
+//        System.out.println(lotteryOdds);
+        Scanner in = new Scanner(System.in);
+        System.out.println("How many number do you need to draw?");
+        int k = in.nextInt();
+        System.out.println("What is the highest number you can draw?");
+        int n = in.nextInt();
+        BigInteger lotteryOdds = BigInteger.valueOf(1);
+        for (int i = 1; i <= k; i++) {
+            lotteryOdds = lotteryOdds.multiply(BigInteger.valueOf(n -i + 1)).divide(BigInteger.valueOf(i));
+        }
+        System.out.println("Your odds are 1 in " + lotteryOdds + ".Good luck");
+        String str = "Hello Java";
     }
 
 }
